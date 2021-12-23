@@ -70,15 +70,36 @@ int main()
   cin >> tempGPA;
   cin.get();
   Node* studentNodeh = new Node(studenth);
-
-  
   studenth->setFirstName(tempFirst);
   studenth->setLastName(tempLast);
   studenth->setID(tempID);
   studenth->setGPA(tempGPA);
 
+  
+  cout << "Type info for student n"<< endl;
+  Student* studentn = new Student();
+  cout << "Enter first name" << endl;
+  cin.get(tempFirst, 100);
+  cin.get();
+  cout << "Enter last name" << endl;
+  cin.get(tempLast, 100);
+  cin.get();
+  cout << "enter id" << endl;
+  cin >> tempID;
+  cin.get();
+  cout << "enter gpa" << endl;
+  cin >> tempGPA;
+  cin.get();
+  studentn->setFirstName(tempFirst);
+  studentn->setLastName(tempLast);
+  studentn->setID(tempID);
+  studentn->setGPA(tempGPA);
+  Node* studentNoden;
+  studentNoden = new Node(studentn);
+
   studentNodeh->setNext(studentNode1);
-  studentNode1->setNext(studentNode2);
+  studentNode1->setNext(studentNoden);
+  studentNoden->setNext(studentNode2);
 
   /*
   cout << student1->getFirstName() << " ";
@@ -112,11 +133,22 @@ int main()
   cout << tempStudent1->getLastName() << " ";
   cout << tempStudent1->getID() << " ";
   cout << tempStudent1->getGPA() << endl;
+
   
+  Node* tempNoden;
+  Student* tempStudentn;
+  tempNoden = studentNode1->getNext();
+  tempStudentn = tempNoden->getStudent();
+  
+  cout << tempStudentn->getFirstName() << " ";
+  cout << tempStudentn->getLastName() << " ";
+  cout << tempStudentn->getID() << " ";
+  cout << tempStudentn->getGPA() << endl;
+
   
   Node* tempNode2;
   Student* tempStudent2;
-  tempNode2 = studentNode1->getNext();
+  tempNode2 = studentNoden->getNext();
   tempStudent2 = tempNode2->getStudent();
   
   cout << tempStudent2->getFirstName() << " ";
