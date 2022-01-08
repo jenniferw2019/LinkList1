@@ -1,3 +1,4 @@
+//header file for node
 #ifndef NODE_H
 #define NODE_H
 #include <iostream>
@@ -8,14 +9,16 @@ using namespace std;
 class Node
 {
  public:
-  Node();
-  Node(Student* newStudent);
-  Node* getNext();
-  Student* getStudent();
-  void setNext(Node* newNode);
-  ~Node();
+  //define functions
+  Node(); // default constructor
+  Node(Student* newStudent); // constructor, set student pointer to new student
+  Node* getNext(); //get next Node pointer
+  Student* getStudent(); // get Student pointer
+  void setNext(Node* newNode); // set next pointer to corresponding node pointer
+  ~Node(); // destructor
 
  private:
+  //variables
   Node* next;
   Student* student;
   

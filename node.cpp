@@ -1,3 +1,4 @@
+//cpp file for node
 #include <iostream>
 #include <cstring>
 #include "node.h"
@@ -26,4 +27,8 @@ void Node::setNext(Node* newNode)
 {
   next = newNode;
 }
-Node::~Node() {}
+Node::~Node()
+{
+  delete student;
+  next = NULL;
+}
